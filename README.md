@@ -1,6 +1,3 @@
-<!-- SPDX-License-Identifier: MIT -->
-<!-- SPDX-FileCopyrightText: Copyright 2025 Sam Blenny -->
-
 # ir-decode-sandbox
 
 **WORK IN PROGRESS**
