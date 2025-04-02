@@ -38,19 +38,28 @@ captures/sony-BD-power.csv
 # suitable for Sony SIRC codes in particular. But, whatever. This works. Just
 # be aware that my timing constants may be a bit off compared to a TSOP38238.
 #
-SIRC_HEADER = 2385     # Initial LOW pulse, no subsequent leader pulse
+SIRC_HEADER = 2383     # Initial LOW pulse, no subsequent leader pulse
 SIRC_HI = 590          # SIRC HIGH pulses are all the same width
-SIRC_LO_0 = 606        # SIRC 0 bit LOW time
-SIRC_LO_1 = 1209       # SIRC 1 bit LOW time
-NEC_HEADER = 8978      # Initial LOW pulse before HIGH leader pulse
-NEC_LEADER = 4501      # HIGH pulse after header (not part of data)
-NEC_REPEAT_HI = 2244   # HIGH pulse for held down key (the NEC repeat code)
-NEC_LO = 568           # NEC LOW pulses (except header) are in range 551-619
-NEC_HI_1 = 546         # NEC 0 bit HIGH time
-NEC_HI_0 = 1680        # NEC 1 bit HIGH time
-SAMSUNG_HEADER = 4525  # Initial LOW pulse before HIGH leader pulse
-SAMSUNG_LEADER = 4507
+SIRC_LO_0 = 609        # SIRC 0 bit LOW time
+SIRC_LO_1 = 1208       # SIRC 1 bit LOW time
+SIRC_GAP_20 = 14800    # SIRC gap after end of 20-bit code before repeat code
+SIRC_PERIOD = 45000    # SIRC start-of-code to start-of-next-repeat is 45ms
+NEC_HEADER = 8984      # Initial LOW pulse before HIGH leader pulse
+NEC_LEADER = 4500      # NEC HIGH pulse after header (not part of data)
+NEC_REPEAT_HI = 2246   # NEC HIGH pulse for held down key (NEC repeat code)
+NEC_LO = 586           # NEC LOW pulses (except header)
+NEC_HI_0 = 512         # NEC 0 bit HIGH time
+NEC_HI_1 = 1681        # NEC 1 bit HIGH time
+NEC_GAP_FIRST = 43550  # NEC gap before first repeat code
+NEC_GAP_REST = 96222   # NEC gap before the rest of the repeat codes
+SAMSUNG_HEADER = 4528  # Initial LOW pulse before HIGH leader pulse
+SAMSUNG_LEADER = 4509  # Samsung HIGH pulse after header (not part of data)
+SAMSUNG_LO = 578       # Samsung LOW pulses (except header)
+SAMSUNG_HI_0 = 532     # Samsung 0 bit HIGH time
+SAMSUNG_HI_1 = 1683    # Samsung 1 bit HIGH time
+SAMSUNG_GAP = 46930    # Samsung HIGH gap between repeats for held down key
 
+# This is used for clustering histogram bins (unit is µs)
 TOLERANCE = 100
 
 
