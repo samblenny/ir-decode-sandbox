@@ -1,3 +1,9 @@
+#!/usr/bin/python3
+"""
+Calculate clustered histograms for IR remote control pulse lengths from logic
+analyzer capture files. The point of this is to help me identify suitable
+timing thresholds to for writing a state machine to do feature extraction.
+"""
 import csv
 import sys
 
@@ -30,7 +36,7 @@ captures/sony-BD-power.csv
 # These timing constants were measured on a Vishay TSOP18638 which has their
 # AG6 gain control and noise filtering. Supposedly AGC2 receivers are more
 # suitable for Sony SIRC codes in particular. But, whatever. This works. Just
-# be aware that my timing constants may be a bit off compared to a TSOP32238.
+# be aware that my timing constants may be a bit off compared to a TSOP38238.
 #
 SIRC_HEADER = 2385     # Initial LOW pulse, no subsequent leader pulse
 SIRC_HI = 590          # SIRC HIGH pulses are all the same width
