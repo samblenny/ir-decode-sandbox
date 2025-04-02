@@ -2,7 +2,7 @@
 """
 Calculate clustered histograms for IR remote control pulse lengths from logic
 analyzer capture files. The point of this is to help me identify suitable
-timing thresholds to for writing a state machine to do feature extraction.
+timing thresholds to use for writing a state machine to do feature extraction.
 """
 import csv
 import sys
